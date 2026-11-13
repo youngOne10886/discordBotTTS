@@ -1,10 +1,10 @@
 import os
 import discord
-#from dotenv import load_dotenv
-from discord import app_commands
+from dotenv import load_dotenv
+#from discord import app_commands
 
-# load_dotenv()
-#botToken = os.getenv("DISCORD_BOT_TOKEN")
+load_dotenv()
+BOT_TOKEN = os.getenv("DISCORD_BOT_TOKEN")
 
 guild = discord.Object(id=int(os.environ["DISCORD_GUILD_ID"]))
 
@@ -22,4 +22,4 @@ bot = TestBot()
 async def ping(interaction: discord.Interaction):
     await interaction.response.send_message("pong!")
 
-bot.run(os.environ["DISCORD_BOT_TOKEN"])
+bot.run(BOT_TOKEN)
